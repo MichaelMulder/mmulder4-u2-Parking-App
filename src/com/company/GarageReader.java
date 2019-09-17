@@ -6,18 +6,18 @@ import java.util.List;
 
 public class GarageReader {
     public static List<Parkable> readGarageFile(String fileName) {
-        List<Parkable> roomList = null;
+        List<Parkable> parkingList = null;
         try {
             FileInputStream readData = new FileInputStream(fileName);
             ObjectInputStream readStream = new ObjectInputStream(readData);
-            roomList = (List<Parkable>) readStream.readObject();
+            parkingList = (List<Parkable>) readStream.readObject();
             readStream.close();
-            return  roomList;
+            return  parkingList;
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return roomList;
+        return parkingList;
     }
 
 }
