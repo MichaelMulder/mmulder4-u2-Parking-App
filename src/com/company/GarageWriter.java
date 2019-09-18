@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class GarageWriter {
-    public static void writeTicketFile(String fileName, HashMap<TicketType, Vehicle> ticketList) {
+    public static void writeTicketFile(String fileName, HashMap<Vehicle, TicketType> ticketList) {
         //write to file
         try {
             FileOutputStream writeData = new FileOutputStream(fileName);

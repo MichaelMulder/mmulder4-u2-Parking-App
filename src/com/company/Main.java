@@ -3,49 +3,65 @@ package com.company;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner keyboard = new Scanner(System.in);
-        HashMap<TicketType, Vehicle> ticketList = new HashMap<>();
+        HashMap<Vehicle, TicketType> ticketList = new HashMap<>();
         int goIn = 0;
         try {
             ticketList = GarageReader.readTicketsFile("TicketsDB.ser");
-            System.out.println(ticketList.size() + "Tickets Loaded");
+            System.out.println(ticketList.size() + " Tickets Loaded");
         } catch (Exception e) {
-            e.printStackTrace();
-            GarageWriter.writeTicketFile("TicketsDB.ser", ticketList);
+           e.printStackTrace();
+            try {
+                GarageWriter.writeTicketFile("TicketsDB.ser", ticketList);
+                System.out.println("Created new TicketsDB");
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
         }
-        int i = ticketList.size();
+        System.out.print(menuHeader());
+        System.out.print(checkInMenu());
         while (goIn != 3) {
             String input = keyboard.nextLine();
             goIn = Integer.parseInt(input);
             // Display Menu
-            Vehicle car = new Vehicle();
-            car.setId(i);
             TicketType ticketType;
-            System.out.println(menuHeader());
-            System.out.println(checkInMenu());
+            int i;
             switch (goIn) {
                 case 1:
+                    i = ticketList.size();
+                    Vehicle car = new Vehicle();
+                    car.setId(++i);
+                    System.out.print(menuHeader());
+                    System.out.print(checkOutMenu());
                     car.checkIn();
                     int goOut;
+                    input = keyboard.nextLine();
                     goOut = Integer.parseInt(input);
-                    System.out.println(menuHeader());
-                    System.out.println(checkOutMenu());
                     switch (goOut) {
                         case 1:
                             car.checkOut();
                             ticketType = TicketType.CHECKED_OUT;
+                            ticketList.put(car,ticketType);
+                            System.out.print(menuHeader());
                             checkOutBill(car);
-                            ticketList.put(ticketType, car);
+                            TimeUnit.SECONDS.sleep(2);
+                            System.out.print(menuHeader());
+                            System.out.print(checkInMenu());
                             break;
                         case 2:
                             car.lostTicket();
                             ticketType = TicketType.LOST_TICKET;
+                            ticketList.put(car, ticketType);
+                            System.out.print(menuHeader());
                             lostTicketBill(car);
-                            ticketList.put(ticketType, car);
+                            TimeUnit.SECONDS.sleep(2);
+                            System.out.print(menuHeader());
+                            System.out.print(checkInMenu());
                             break;
                     }
                     break;
@@ -57,40 +73,33 @@ public class Main {
         }
     }
     public static String menuHeader() {
-        return " Best Value Parking Garage\n" +
+        return "\n Best Value Parking Garage\n" +
                 "\n" +
                 " =========================";
     }
 
     public static String checkInMenu() {
-        return "1 – Check/In\n" +
+        return "\n 1 – Check/In\n" +
                 "\n" +
                 " 3 – Close Garage\n" +
                 "\n" +
-                " =>_";
+                " =>";
     }
 
     public static String checkOutMenu() {
-        return "1 – Check/Out\n" +
+        return "\n 1 – Check/Out\n" +
                 "\n" +
                 " 2 – Lost Ticket\n" +
                 "\n" +
-                " =>_";
+                " =>";
     }
     public static void checkOutBill(Vehicle car) {
         Duration hoursParked = Duration.between(car.getCheckInTime(), car.getCheckOutTime());
-        System.out.printf("Receipt for a vehicle id %d \n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "%d hours parked %dam – %dpm\n \n $%.2d", car.getId(), hoursParked.toHoursPart(), car.getCheckInTime().getHour(), (car.getCheckOutTime().getHour() - 12), car.getTicketPrice());
+        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n %d hours parked %dam – %dpm\n \n $%d.00",
+                car.getId(), hoursParked.toHoursPart(), car.getCheckInTime().getHour(), (car.getCheckOutTime().getHour() - 12), (car.getTicketPrice() / 100));
     }
 
     public static void lostTicketBill(Vehicle car) {
-        System.out.printf("Receipt for a vehicle id %d \n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "Lost Ticket\n \n $%.2d", car.getId(), car.getTicketPrice());
+        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n Lost Ticket \n \n $%d.00", car.getId(), (car.getTicketPrice() / 100));
     }
 }

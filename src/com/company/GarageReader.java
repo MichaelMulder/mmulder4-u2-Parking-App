@@ -5,7 +5,7 @@ import java.io.ObjectInputStream;
 import java.util.HashMap;
 
 public class GarageReader {
-        public static HashMap<TicketType, Vehicle> readTicketsFile(String fileName) {
+        public static HashMap<Vehicle, TicketType> readTicketsFile(String fileName) {
         HashMap<TicketType, Vehicle> ticketList = new HashMap<>();
         try {
             FileInputStream readData = new FileInputStream(fileName);
