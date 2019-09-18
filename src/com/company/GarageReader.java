@@ -2,22 +2,22 @@ package com.company;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-import java.util.List;
+import java.util.HashMap;
 
 public class GarageReader {
-    public static List<Parkable> readGarageFile(String fileName) {
-        List<Parkable> parkingList = null;
+        public static HashMap<TicketType, Vehicle> readTicketsFile(String fileName) {
+        HashMap<TicketType, Vehicle> ticketList = new HashMap<>();
         try {
             FileInputStream readData = new FileInputStream(fileName);
             ObjectInputStream readStream = new ObjectInputStream(readData);
-            parkingList = (List<Parkable>) readStream.readObject();
+            ticketList = (HashMap<TicketType, Vehicle>) readStream.readObject();
             readStream.close();
-            return  parkingList;
+            return  ticketList;
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return parkingList;
+        return ticketList;
     }
 
 }

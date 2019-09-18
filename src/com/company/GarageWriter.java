@@ -3,16 +3,16 @@ package com.company;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.List;
+import java.util.HashMap;
 
 public class GarageWriter {
-    public static void writeRoomFile(String fileName, List<Parkable> parkingList) {
+    public static void writeTicketFile(String fileName, HashMap<TicketType, Vehicle> ticketList) {
         //write to file
         try {
             FileOutputStream writeData = new FileOutputStream(fileName);
             ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
 
-            writeStream.writeObject(parkingList);
+            writeStream.writeObject(ticketList);
             writeStream.flush();
             writeStream.close();
 
