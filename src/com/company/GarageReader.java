@@ -6,11 +6,11 @@ import java.util.HashMap;
 
 public class GarageReader {
         public static HashMap<Vehicle, TicketType> readTicketsFile(String fileName) {
-        HashMap<TicketType, Vehicle> ticketList = new HashMap<>();
+        HashMap<Vehicle, TicketType> ticketList = new HashMap<>();
         try {
             FileInputStream readData = new FileInputStream(fileName);
             ObjectInputStream readStream = new ObjectInputStream(readData);
-            ticketList = (HashMap<TicketType, Vehicle>) readStream.readObject();
+            ticketList = (HashMap<Vehicle, TicketType>) readStream.readObject();
             readStream.close();
             return  ticketList;
         } catch (Exception e) {
