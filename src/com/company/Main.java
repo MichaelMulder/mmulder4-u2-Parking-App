@@ -52,9 +52,11 @@ public class Main {
                             System.out.print(checkInMenu());
                             break;
                     }
+                    GarageWriter.writeTicketFile("TicketsDB.ser", ticketList);
                     break;
                 case 3:
-                   closeGarage(ticketList);
+                    System.out.println(menuHeader());
+                    closeGarage(ticketList);
 
                 default:
                     System.exit(0);
@@ -111,7 +113,7 @@ public class Main {
            }
         }
 
-        System.out.printf("Activity to Date\n" +
+        System.out.printf(" Activity to Date\n" +
                 "\n" +
                 " \n" +
                 "\n" +

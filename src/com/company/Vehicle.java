@@ -26,7 +26,12 @@ public class Vehicle implements Parkable, Serializable {
     public void checkOut() {
         calcCheckOutTime();
         Duration timeCheckedIn = Duration.between(this.checkInTime, this.checkOutTime);
-        this.ticketPrice += 100 * timeCheckedIn.toHoursPart();
+        if(timeCheckedIn.toHoursPart() < 10 && timeCheckedIn.toHoursPart() > 3) {
+                this.ticketPrice += 100 * timeCheckedIn.toHoursPart();
+        } else {
+            this.ticketPrice += 1000;
+        }
+
     }
 
     @Override
