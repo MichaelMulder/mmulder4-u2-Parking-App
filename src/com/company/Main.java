@@ -9,19 +9,8 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner keyboard = new Scanner(System.in);
         HashMap<Vehicle, TicketType> ticketList = new HashMap<>();
+        ticketList = GarageReader.readTicketsFile("TicketsDB.ser");
         int goIn = 0;
-        try {
-            ticketList = GarageReader.readTicketsFile("TicketsDB.ser");
-            System.out.println(ticketList.size() + " Tickets Loaded");
-        } catch (Exception e) {
-           e.printStackTrace();
-            try {
-                GarageWriter.writeTicketFile("TicketsDB.ser", ticketList);
-                System.out.println("Created new TicketsDB");
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
-        }
         System.out.print(menuHeader());
         System.out.print(checkInMenu());
         while (goIn != 3) {

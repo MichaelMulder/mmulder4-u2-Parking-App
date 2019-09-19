@@ -12,9 +12,16 @@ public class GarageReader {
             ObjectInputStream readStream = new ObjectInputStream(readData);
             ticketList = (HashMap<Vehicle, TicketType>) readStream.readObject();
             readStream.close();
+            System.out.println("loaded Tickets file");
             return  ticketList;
         } catch (Exception e) {
             e.printStackTrace();
+            try {
+                GarageWriter.writeTicketFile("TicketsDB.ser", ticketList);
+                System.out.println("Created new TicketsDB");
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
         }
 
         return ticketList;
