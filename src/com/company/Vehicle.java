@@ -9,10 +9,10 @@ public class Vehicle implements Parkable, Serializable {
     private int id = 1;
     private LocalTime checkInTime;
     private LocalTime checkOutTime;
-    private int ticketPrice = 0;
+    private double ticketPrice = 0;
 
     @Override
-    public int getParkingFee() {
+    public double getParkingFee() {
         return PARKING_FEE;
     }
 
@@ -65,7 +65,7 @@ public class Vehicle implements Parkable, Serializable {
     }
 
 
-    public int getTicketPrice() {
+    public double getTicketPrice() {
         return ticketPrice;
     }
 

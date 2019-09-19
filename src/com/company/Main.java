@@ -1,8 +1,7 @@
 package com.company;
 
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -66,6 +65,7 @@ public class Main {
                     }
                     break;
                 case 3:
+                   closeGarage(ticketList);
 
                 default:
                     System.exit(0);
@@ -95,11 +95,44 @@ public class Main {
     }
     public static void checkOutBill(Vehicle car) {
         Duration hoursParked = Duration.between(car.getCheckInTime(), car.getCheckOutTime());
-        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n %d hours parked %dam – %dpm\n \n $%d.00",
+        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n %d hours parked %dam – %dpm\n \n $%.2f",
                 car.getId(), hoursParked.toHoursPart(), car.getCheckInTime().getHour(), (car.getCheckOutTime().getHour() - 12), (car.getTicketPrice() / 100));
     }
 
     public static void lostTicketBill(Vehicle car) {
-        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n Lost Ticket \n \n $%d.00", car.getId(), (car.getTicketPrice() / 100));
+        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n Lost Ticket \n \n $%.2f", car.getId(), (car.getTicketPrice() / 100));
+    }
+    public static void closeGarage(HashMap<Vehicle, TicketType> ticketList) {
+        int checkInCount = 0;
+        int lostTicketCount = 0;
+        double sum = 0;
+        double checkInSum = 0;
+        double lostTicketSum = 0;
+
+        for(Map.Entry<Vehicle, TicketType> entry: ticketList.entrySet()) {
+           TicketType ticketType = entry.getValue();
+           Vehicle car = entry.getKey();
+           sum += car.getTicketPrice();
+           if(ticketType.equals(TicketType.CHECKED_OUT)) {
+               checkInCount++;
+               checkInSum += car.getTicketPrice();
+           } else {
+               lostTicketCount++;
+               lostTicketSum += car.getTicketPrice();
+           }
+        }
+
+        System.out.printf("Activity to Date\n" +
+                "\n" +
+                " \n" +
+                "\n" +
+                " $%.2f was collected from %d Check Ins\n" +
+                "\n" +
+                " $%.2f was collected from %d Lost Tickets\n" +
+                "\n" +
+                " \n" +
+                "\n" +
+                " $%.2f was collected overall", (checkInSum / 100), checkInCount, (lostTicketSum / 100), lostTicketCount, (sum / 100));
+
     }
 }
