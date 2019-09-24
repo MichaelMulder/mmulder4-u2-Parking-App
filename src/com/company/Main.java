@@ -86,12 +86,25 @@ public class Main {
     }
     public static void checkOutBill(Vehicle car) {
         Duration hoursParked = Duration.between(car.getCheckInTime(), car.getCheckOutTime());
-        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n %d hours parked %dam – %dpm\n \n $%.2f",
+        System.out.printf("\n Receipt for a vehicle id %d " +
+                        "\n " +
+                        "\n " +
+                        "\n " +
+                        "\n %d hours parked %dam – %dpm" +
+                        "\n " +
+                        "\n $%.2f",
                 car.getId(), hoursParked.toHoursPart(), car.getCheckInTime().getHour(), (car.getCheckOutTime().getHour() - 12), (car.getTicketPrice() / 100));
     }
 
     public static void lostTicketBill(Vehicle car) {
-        System.out.printf("\n Receipt for a vehicle id %d \n \n \n \n Lost Ticket \n \n $%.2f", car.getId(), (car.getTicketPrice() / 100));
+        System.out.printf("\n Receipt for a vehicle id %d " +
+                "\n " +
+                "\n " +
+                "\n " +
+                "\n " +
+                "Lost Ticket " +
+                "\n " +
+                "\n $%.2f", car.getId(), (car.getTicketPrice() / 100));
     }
     public static void closeGarage(HashMap<Vehicle, TicketType> ticketList) {
         int checkInCount = 0;
