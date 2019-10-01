@@ -63,12 +63,21 @@ public class Main {
             }
         }
     }
+
+    /**
+     * Creates the menu header for the menu
+     * @return String
+     */
     public static String menuHeader() {
         return "\n Best Value Parking Garage\n" +
                 "\n" +
                 " =========================";
     }
 
+    /**
+     * Creates check in menu
+     * @return String
+     */
     public static String checkInMenu() {
         return "\n 1 – Check/In\n" +
                 "\n" +
@@ -77,6 +86,10 @@ public class Main {
                 " =>";
     }
 
+    /**
+     * Creates check out menu
+     * @return String
+     */
     public static String checkOutMenu() {
         return "\n 1 – Check/Out\n" +
                 "\n" +
@@ -84,6 +97,11 @@ public class Main {
                 "\n" +
                 " =>";
     }
+
+    /**
+     * Prints out the the receipt for checking out and how many hours were parked
+     * @param car the Vehicle being checked out
+     */
     public static void checkOutBill(Vehicle car) {
         Duration hoursParked = Duration.between(car.getCheckInTime(), car.getCheckOutTime());
         System.out.printf("\n Receipt for a vehicle id %d " +
@@ -96,6 +114,10 @@ public class Main {
                 car.getId(), hoursParked.toHoursPart(), car.getCheckInTime().getHour(), (car.getCheckOutTime().getHour() - 12), (car.getTicketPrice() / 100));
     }
 
+    /**
+     * Prints out receipt for a lost ticket
+     * @param car the Vehicle that lost the ticket
+     */
     public static void lostTicketBill(Vehicle car) {
         System.out.printf("\n Receipt for a vehicle id %d " +
                 "\n " +
@@ -106,6 +128,15 @@ public class Main {
                 "\n " +
                 "\n $%.2f", car.getId(), (car.getTicketPrice() / 100));
     }
+
+    /**
+     * Prints out the activity to date for the parking garage by
+     * looking at a list of tickets given.
+     * Calculates how many checkIns and Lost Tickets there were.
+     * Calculates much was made in total and for each ticket type
+     * how much was made from that alone.
+     * @param ticketList the tickets being processed
+     */
     public static void closeGarage(HashMap<Vehicle, TicketType> ticketList) {
         int checkInCount = 0;
         int lostTicketCount = 0;
