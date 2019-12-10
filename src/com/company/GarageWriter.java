@@ -11,7 +11,7 @@ public class GarageWriter {
      * @param fileName
      * @param ticketList
      */
-    public static void writeTicketFile(String fileName, HashMap<Vehicle, TicketType> ticketList) {
+    public static void writeTicketFile(String fileName, HashMap<Ticket, TicketType> ticketList) {
         //write to file
         try {
             FileOutputStream writeData = new FileOutputStream(fileName);

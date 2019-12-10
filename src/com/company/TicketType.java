@@ -3,5 +3,5 @@ package com.company;
 import java.io.Serializable;
 
 public enum TicketType implements Serializable {
-    CHECKED_OUT, LOST_TICKET
+    MIN_MAX, LOST_TICKET, SPECIAL_EVENT, PENDING
 }
