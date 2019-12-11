@@ -19,6 +19,10 @@ public class Ticket implements Serializable {
         this.checkOutTime = checkOutTime;
     }
 
+    /**
+     * generates a random time between 7 am to noon
+     * and assigns the value to the checkInTime field
+     */
     public void calcCheckInTime() {
         int hourRange = ThreadLocalRandom.current().nextInt(7, 12 + 1);
         int mintRange = ThreadLocalRandom.current().nextInt(0, 59 + 1);
@@ -26,6 +30,10 @@ public class Ticket implements Serializable {
         this.checkInTime = LocalTime.of(hourRange,mintRange,secsRange);
     }
 
+    /**
+     * generates a random time between 1pm to 10pm
+     * and assigns the value to the checkOutTime field
+     */
     public void calcCheckOutTime() {
         int hourRange = ThreadLocalRandom.current().nextInt(13, 22 + 1);
         int mintRange = ThreadLocalRandom.current().nextInt(0, 59 + 1);

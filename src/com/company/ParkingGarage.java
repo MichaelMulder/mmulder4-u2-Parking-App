@@ -109,6 +109,7 @@ public class ParkingGarage {
                 case 3:
                     // close Garage
                     GarageWriter.writeTicketFile("TicketsDB.ser", ticketList);
+                    System.out.println(menuHeader());
                     closeGarage(ticketList);
                     break;
                 default:
@@ -287,42 +288,54 @@ public class ParkingGarage {
 
     }
 
+    /**
+     * Searches a ticketList by an Id number for a Ticket
+     * Assigns the TicketType Min Max and a check out time
+     * @param ticketList whats being searched
+     * @param id the search term
+     * @return the ticket found
+     */
     public static Ticket findTicketById(HashMap<Ticket, TicketType> ticketList, int id) {
         for(Ticket ticket: ticketList.keySet()) {
 
             if(ticket.getTicketNumber() == id) {
                 ticket.setTicketType(TicketType.MIN_MAX);
                 ticket.calcCheckOutTime();
-                return ticket;
             } else {
                 ticket = new Ticket();
                 ticket.setTicketNumber(ticketList.size());
                 ticket.calcCheckInTime();
                 ticket.calcCheckOutTime();
                 ticket.setTicketType(TicketType.MIN_MAX);
-                return ticket;
             }
+            return ticket;
         }
         return null;
 
     }
 
+    /**
+     * Searches the ticketList for a ticket that is pending
+     * removes the pending ticket and replaces it with a lost ticket
+     * @param ticketList what's being searched
+     * @return the ticket that was pending
+     */
     public static Ticket findAPendingTicket(HashMap<Ticket, TicketType> ticketList) {
         for(Map.Entry<Ticket, TicketType> entry: ticketList.entrySet()) {
             Ticket ticket = entry.getKey();
             TicketType ticketType = entry.getValue();
 
             if(ticketType.equals(TicketType.PENDING)) {
-                ticketList.remove(ticket);
+                ticketList.remove(ticket, TicketType.PENDING);
                 ticket.setTicketType(TicketType.LOST_TICKET);
-                return ticket;
+                ticketList.put(ticket, ticket.getTicketType());
             } else {
                 ticket = new Ticket();
                 ticket.setTicketNumber(ticketList.size());
 
                 ticket.setTicketType(TicketType.LOST_TICKET);
-                return ticket;
             }
+            return ticket;
         }
         return null;
     }

@@ -2,6 +2,12 @@ package com.company;
 
 public class FeeStrategyFactoryImpl implements FeeStrategyFactory {
 
+    /**
+     * The factory implementation for fee strategies
+     * Min Max, Special Event, Lost ticket
+     * @param feeName name of the strategies
+     * @return a fee strategy
+     */
     @Override
     public FeeStrategy make(String feeName) {
         switch (feeName) {
