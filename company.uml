@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1675.0">com.company.ParkingGarageTest</node>
+    <node x="1404.796795334296" y="1106.0">com.company.ParkingGarage</node>
+    <node x="483.63664622414717" y="1315.0">com.company.SpecialEventTest</node>
+    <node x="760.5116462241472" y="1315.0">com.company.LostTicketTest</node>
+    <node x="1252.036646224147" y="877.5">com.company.FeeStrategyFactory</node>
+    <node x="1133.671795334296" y="659.0">com.company.FeeStrategy</node>
+    <node x="582.819546657048" y="817.0">com.company.SpecialEvent</node>
+    <node x="1610.8745670995675" y="817.0">com.company.GarageReader</node>
+    <node x="1360.4166666666667" y="1725.5">com.company.Main</node>
+    <node x="889.0579004329009" y="817.0">com.company.LostTicket</node>
+    <node x="247.01164622414717" y="1278.0">com.company.MinMaxTest</node>
+    <node x="1010.5116462241472" y="1315.0">com.company.FeeStrategyFactoryImpl</node>
+    <node x="319.944546657048" y="790.0">com.company.MinMax</node>
+    <node x="588.194546657048" y="0.0">com.company.TicketType</node>
+    <node x="461.944546657048" y="212.0">com.company.Ticket</node>
+    <node x="1831.864417989419" y="659.0">com.company.GarageWriter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.FeeStrategyFactoryImpl" target="com.company.FeeStrategy">
+      <point x="66.79999999999995" y="-35.5" />
+      <point x="1244.3116462241471" y="1086.0" />
+      <point x="1234.7449795574805" y="1086.0" />
+      <point x="1234.7449795574805" y="770.0" />
+      <point x="1263.7551286676294" y="770.0" />
+      <point x="18.583333333333258" y="35.5" />
+    </edge>
+    <edge source="com.company.SpecialEvent" target="com.company.Ticket">
+      <point x="-55.75" y="-96.0" />
+      <point x="638.569546657048" y="639.0" />
+      <point x="613.4167688792702" y="639.0" />
+      <point x="7.972222222222172" y="163.5" />
+    </edge>
+    <edge source="com.company.GarageReader" target="com.company.TicketType">
+      <point x="2.2737367544323206E-13" y="-96.0" />
+      <point x="1850.3745670995677" y="770.0" />
+      <point x="1821.364417989419" y="770.0" />
+      <point x="1821.364417989419" y="192.0" />
+      <point x="702.6231180856195" y="192.0" />
+      <point x="25.428571428571445" y="76.0" />
+    </edge>
+    <edge source="com.company.FeeStrategyFactory" target="com.company.FeeStrategy">
+      <point x="0.0" y="-35.5" />
+      <point x="1393.036646224147" y="770.0" />
+      <point x="1300.921795334296" y="770.0" />
+      <point x="55.75" y="35.5" />
+    </edge>
+    <edge source="com.company.ParkingGarage" target="com.company.TicketType">
+      <point x="225.75" y="-244.5" />
+      <point x="1888.546795334296" y="1086.0" />
+      <point x="2363.364417989419" y="1086.0" />
+      <point x="2363.364417989419" y="172.0" />
+      <point x="753.4802609427622" y="172.0" />
+      <point x="76.28571428571422" y="76.0" />
+    </edge>
+    <edge source="com.company.Ticket" target="com.company.TicketType">
+      <point x="71.75" y="-163.5" />
+      <point x="0.0" y="76.0" />
+    </edge>
+    <edge source="com.company.ParkingGarage" target="com.company.FeeStrategy">
+      <point x="-96.75" y="-244.5" />
+      <point x="1566.046795334296" y="1086.0" />
+      <point x="1550.375" y="1086.0" />
+      <point x="1550.375" y="760.0" />
+      <point x="1338.0884620009629" y="760.0" />
+      <point x="92.91666666666674" y="35.5" />
+    </edge>
+    <edge source="com.company.GarageReader" target="com.company.Ticket">
+      <point x="-159.6666666666663" y="-96.0" />
+      <point x="1690.7079004329012" y="770.0" />
+      <point x="1750.161213323715" y="770.0" />
+      <point x="1750.161213323715" y="569.0" />
+      <point x="725.0278799903815" y="569.0" />
+      <point x="119.58333333333348" y="163.5" />
+    </edge>
+    <edge source="com.company.FeeStrategyFactoryImpl" target="com.company.SpecialEvent">
+      <point x="-66.79999999999995" y="-35.5" />
+      <point x="1110.7116462241472" y="1066.0" />
+      <point x="768.6528799903813" y="1066.0" />
+      <point x="74.33333333333326" y="96.0" />
+    </edge>
+    <edge source="com.company.MinMax" target="com.company.Ticket">
+      <point x="-55.75" y="-123.0" />
+      <point x="375.694546657048" y="619.0" />
+      <point x="565.5834355459369" y="619.0" />
+      <point x="-39.861111111111086" y="163.5" />
+    </edge>
+    <edge source="com.company.MinMaxTest" target="com.company.MinMax">
+      <point x="26.75" y="-72.5" />
+      <point x="380.76164622414717" y="1086.0" />
+      <point x="357.11121332371465" y="1086.0" />
+      <point x="-74.33333333333337" y="123.0" />
+    </edge>
+    <edge source="com.company.FeeStrategyFactoryImpl" target="com.company.MinMax">
+      <point x="-133.5999999999999" y="-35.5" />
+      <point x="1043.9116462241473" y="1076.0" />
+      <point x="505.7778799903813" y="1076.0" />
+      <point x="74.33333333333326" y="123.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.FeeStrategyFactoryImpl">
+      <point x="-75.375" y="-35.5" />
+      <point x="1385.5416666666667" y="1625.0" />
+      <point x="1177.5116462241472" y="1625.0" />
+      <point x="0.0" y="35.5" />
+    </edge>
+    <edge source="com.company.ParkingGarage" target="com.company.GarageWriter">
+      <point x="161.25" y="-244.5" />
+      <point x="1824.046795334296" y="1076.0" />
+      <point x="2222.614417989419" y="1076.0" />
+      <point x="130.25" y="35.5" />
+    </edge>
+    <edge source="com.company.ParkingGarage" target="com.company.FeeStrategyFactory">
+      <point x="-225.75" y="-244.5" />
+      <point x="1437.046795334296" y="1086.0" />
+      <point x="1428.286646224147" y="1086.0" />
+      <point x="35.25" y="35.5" />
+    </edge>
+    <edge source="com.company.FeeStrategyFactoryImpl" target="com.company.FeeStrategyFactory">
+      <point x="133.5999999999999" y="-35.5" />
+      <point x="1311.111646224147" y="1086.0" />
+      <point x="1287.286646224147" y="1086.0" />
+      <point x="-105.75" y="35.5" />
+    </edge>
+    <edge source="com.company.ParkingGarageTest" target="com.company.TicketType">
+      <point x="-158.1428571428571" y="-86.0" />
+      <point x="26.35714285714289" y="1625.0" />
+      <point x="177.77553511303609" y="1625.0" />
+      <point x="177.77553511303609" y="172.0" />
+      <point x="600.9088323713338" y="172.0" />
+      <point x="-76.28571428571422" y="76.0" />
+    </edge>
+    <edge source="com.company.MinMax" target="com.company.FeeStrategy">
+      <point x="55.75" y="-123.0" />
+      <point x="487.194546657048" y="750.0" />
+      <point x="1152.2551286676294" y="750.0" />
+      <point x="-92.91666666666674" y="35.5" />
+    </edge>
+    <edge source="com.company.FeeStrategy" target="com.company.Ticket">
+      <point x="0.0" y="-35.5" />
+      <point x="1245.171795334296" y="599.0" />
+      <point x="677.194546657048" y="599.0" />
+      <point x="71.75" y="163.5" />
+    </edge>
+    <edge source="com.company.ParkingGarageTest" target="com.company.ParkingGarage">
+      <point x="158.1428571428571" y="-86.0" />
+      <point x="342.6428571428571" y="1635.0" />
+      <point x="1490.796795334296" y="1635.0" />
+      <point x="-172.0" y="244.5" />
+    </edge>
+    <edge source="com.company.ParkingGarage" target="com.company.Ticket">
+      <point x="32.25" y="-244.5" />
+      <point x="1695.046795334296" y="1076.0" />
+      <point x="1600.3745670995675" y="1076.0" />
+      <point x="1600.3745670995675" y="579.0" />
+      <point x="709.0834355459369" y="579.0" />
+      <point x="103.63888888888891" y="163.5" />
+    </edge>
+    <edge source="com.company.SpecialEventTest" target="com.company.SpecialEvent">
+      <point x="96.0" y="-35.5" />
+      <point x="707.6366462241472" y="1086.0" />
+      <point x="694.319546657048" y="1086.0" />
+      <point x="0.0" y="96.0" />
+    </edge>
+    <edge source="com.company.GarageWriter" target="com.company.Ticket">
+      <point x="-130.25" y="-35.5" />
+      <point x="1962.114417989419" y="559.0" />
+      <point x="740.9723244348259" y="559.0" />
+      <point x="135.52777777777783" y="163.5" />
+    </edge>
+    <edge source="com.company.ParkingGarage" target="com.company.GarageReader">
+      <point x="96.75" y="-244.5" />
+      <point x="1759.546795334296" y="1066.0" />
+      <point x="1850.3745670995675" y="1066.0" />
+      <point x="0.0" y="96.0" />
+    </edge>
+    <edge source="com.company.SpecialEvent" target="com.company.FeeStrategy">
+      <point x="55.75" y="-96.0" />
+      <point x="750.069546657048" y="760.0" />
+      <point x="1189.421795334296" y="760.0" />
+      <point x="-55.75" y="35.5" />
+    </edge>
+    <edge source="com.company.GarageWriter" target="com.company.TicketType">
+      <point x="130.25" y="-35.5" />
+      <point x="2222.614417989419" y="182.0" />
+      <point x="728.0516895141909" y="182.0" />
+      <point x="50.85714285714289" y="76.0" />
+    </edge>
+    <edge source="com.company.LostTicketTest" target="com.company.LostTicket">
+      <point x="86.25" y="-35.5" />
+      <point x="961.7616462241472" y="1086.0" />
+      <point x="1000.5579004329009" y="1086.0" />
+      <point x="0.0" y="96.0" />
+    </edge>
+    <edge source="com.company.MinMaxTest" target="com.company.Ticket">
+      <point x="-80.25" y="-72.5" />
+      <point x="274.38664622414717" y="599.0" />
+      <point x="533.694546657048" y="599.0" />
+      <point x="-71.75" y="163.5" />
+    </edge>
+    <edge source="com.company.GarageReader" target="com.company.GarageWriter">
+      <point x="159.66666666666697" y="-96.0" />
+      <point x="2010.0412337662344" y="770.0" />
+      <point x="1962.114417989419" y="770.0" />
+      <point x="-130.25" y="35.5" />
+    </edge>
+    <edge source="com.company.FeeStrategyFactoryImpl" target="com.company.LostTicket">
+      <point x="0.0" y="-35.5" />
+      <point x="1177.5116462241472" y="1056.0" />
+      <point x="1074.891233766234" y="1056.0" />
+      <point x="74.33333333333326" y="96.0" />
+    </edge>
+    <edge source="com.company.LostTicketTest" target="com.company.Ticket">
+      <point x="-86.25" y="-35.5" />
+      <point x="789.2616462241472" y="1086.0" />
+      <point x="825.194546657048" y="1086.0" />
+      <point x="825.194546657048" y="629.0" />
+      <point x="629.3612133237148" y="629.0" />
+      <point x="23.916666666666742" y="163.5" />
+    </edge>
+    <edge source="com.company.LostTicket" target="com.company.Ticket">
+      <point x="-55.75" y="-96.0" />
+      <point x="944.8079004329009" y="609.0" />
+      <point x="661.2501022126037" y="609.0" />
+      <point x="55.80555555555566" y="163.5" />
+    </edge>
+    <edge source="com.company.ParkingGarageTest" target="com.company.Ticket">
+      <point x="0.0" y="-86.0" />
+      <point x="184.5" y="1655.0" />
+      <point x="214.51164622414717" y="1655.0" />
+      <point x="214.51164622414717" y="569.0" />
+      <point x="485.8612133237147" y="569.0" />
+      <point x="-119.58333333333331" y="163.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.FeeStrategyFactory">
+      <point x="-25.125" y="-35.5" />
+      <point x="1435.7916666666667" y="1615.0" />
+      <point x="1357.786646224147" y="1615.0" />
+      <point x="-35.25" y="35.5" />
+    </edge>
+    <edge source="com.company.LostTicket" target="com.company.FeeStrategy">
+      <point x="55.75" y="-96.0" />
+      <point x="1056.3079004329009" y="770.0" />
+      <point x="1226.5884620009629" y="770.0" />
+      <point x="-18.583333333333258" y="35.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.ParkingGarage">
+      <point x="25.125" y="-35.5" />
+      <point x="1486.0416666666667" y="1645.0" />
+      <point x="1662.796795334296" y="1645.0" />
+      <point x="0.0" y="244.5" />
+    </edge>
+    <edge source="com.company.SpecialEventTest" target="com.company.Ticket">
+      <point x="-96.0" y="-35.5" />
+      <point x="515.6366462241472" y="1086.0" />
+      <point x="561.319546657048" y="1086.0" />
+      <point x="561.319546657048" y="629.0" />
+      <point x="581.5278799903814" y="629.0" />
+      <point x="-23.91666666666663" y="163.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5611676486341725" x="1176.499999999999" y="913.5000000000001" />
+  <SelectedNodes>
+    <node>com.company.FeeStrategyFactoryImpl</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
